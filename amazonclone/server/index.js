@@ -1,14 +1,28 @@
-// IMPORTS FROM PACKAGES
+//Importing form Packages
 const express = require("express");
-// IMPORTS FROM OTHER FILES
+const mongoose = require("mongoose");
 
+//Importing From other Files
+const authRouter = require("./routes/auth");
 
-// INIT
-const PORT = process.env.PORT || 3000;
+//INIT
+const PORT = 3000;
 const app = express();
+const DB = "mongodb+srv://aashutosh:Chabahil11@cluster0.mr2rke2.mongodb.net/?retryWrites=true&w=majority"
 
+//Middleware
+app.use(authRouter);
 
+//Connection
+mongoose
+  .connect(DB)
+  .then(() => {
+    console.log("Connection Sucessful");
+  })
+  .catch((e) => {
+    console.log(e);
+  });
 
-app.listen(PORT, "0.0.0.0", () => {
-  console.log(`connected at port ${PORT}`);
+app.listen(PORT, () => {
+  console.log(`connected at Port ${PORT}`);
 });
