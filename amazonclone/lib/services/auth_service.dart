@@ -1,18 +1,17 @@
+import 'package:amazonclone/constants/error_handling.dart';
 import 'package:amazonclone/constants/global_variables.dart';
+import 'package:amazonclone/constants/utils.dart';
 import 'package:amazonclone/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class AuthService {
-  get onSucess => null;
-
-  // a function to signing up the user
-
+  //sign up user
   void signUpUser({
     required BuildContext context,
     required String email,
-    required String password,
     required String name,
+    required String password,
   }) async {
     try {
       User user = User(
@@ -28,9 +27,21 @@ class AuthService {
         Uri.parse('$uri/api/signup'),
         body: user.toJson(),
         headers: <String, String>{
-          'content-Type': 'application/json; charset = UTF-8',
+          'Content-Type': 'application/json; charset=UTF-8',
         },
       );
-    } catch (e) {}
+      httpErrorHandle(
+        response: res,
+        context: context,
+        onSuccess: () {
+          showSnackBar(
+            context,
+            'Account created! Login with the same credentials!',
+          );
+        },
+      );
+    } catch (e) {
+      showSnackBar(context, e.toString());
+    }
   }
 }

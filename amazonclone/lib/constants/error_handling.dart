@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:amazonclone/constants/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -7,11 +6,11 @@ import 'package:http/http.dart' as http;
 void httpErrorHandle({
   required http.Response response,
   required BuildContext context,
-  required VoidCallback onSucess, required Null Function() onSuccess, // Function()?
+  required VoidCallback onSuccess,
 }) {
   switch (response.statusCode) {
     case 200:
-      onSucess();
+      onSuccess();
       break;
     case 400:
       showSnackBar(context, jsonDecode(response.body)['msg']);
