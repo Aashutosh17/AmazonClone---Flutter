@@ -1,9 +1,12 @@
+import 'dart:convert';
 import 'package:amazonclone/constants/error_handling.dart';
 import 'package:amazonclone/constants/global_variables.dart';
 import 'package:amazonclone/constants/utils.dart';
 import 'package:amazonclone/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthService {
   //sign up user
@@ -44,4 +47,6 @@ class AuthService {
       showSnackBar(context, e.toString());
     }
   }
+
+ 
 }

@@ -8,16 +8,16 @@ const userSchema = mongoose.Schema({
     trim: true,
   },
   email: {
-    type: String,
     required: true,
+    type: String,
     trim: true,
-    validator: {
+    validate: {
       validator: (value) => {
-        const re = // Email Validator.. Regualar Expression that accepts unicode..
+        const re =
           /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
         return value.match(re);
       },
-      message: "Please enter a Valid Email Address",
+      message: "Please enter a valid email address",
     },
   },
   password: {
