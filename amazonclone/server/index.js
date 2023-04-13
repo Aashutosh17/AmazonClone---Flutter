@@ -19,7 +19,7 @@ app.use(authRouter);
 mongoose
   .connect(DB)
   .then(() => {
-    console.log("Connection Successful");
+    console.log("MongoDB connection sucessfull!");
   })
   .catch((e) => {
     console.log(e);
