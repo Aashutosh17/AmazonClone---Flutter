@@ -5,12 +5,9 @@ const authRouter = express.Router();
 const jwt = require("jsonwebtoken");
 const auth = require("../middlewares/auth");
 
-//get the data from the client side
-// And then we will post the data in the database
-//return that data to the user
-
 // SIGN UP
 authRouter.post("/api/signup", async (req, res) => {
+  console.log(req);
   try {
     const { name, email, password } = req.body;
 

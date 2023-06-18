@@ -8,8 +8,7 @@ const authRouter = require("./routes/auth");
 //INIT
 const PORT = 3000;
 const app = express();
-const DB =
-  "mongodb+srv://aashutosh:Chabahil11@cluster0.mr2rke2.mongodb.net/?retryWrites=true&w=majority";
+const DB = "mongodb+srv://aashutosh:Chabahil11@cluster0.lcsq3pt.mongodb.net/";
 
 //Middleware
 app.use(express.json());
@@ -19,7 +18,7 @@ app.use(authRouter);
 mongoose
   .connect(DB)
   .then(() => {
-    console.log("MongoDB connection sucessfull!");
+    console.log("MongoDB connection sucessful!");
   })
   .catch((e) => {
     console.log(e);

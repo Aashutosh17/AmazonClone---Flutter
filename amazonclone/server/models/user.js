@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
-const { use } = require("../routes/auth");
 
 const userSchema = mongoose.Schema({
   name: {
-    type: String,
     required: true,
+    type: String,
     trim: true,
   },
   email: {
@@ -21,14 +20,8 @@ const userSchema = mongoose.Schema({
     },
   },
   password: {
-    type: String,
     required: true,
-    // validator: {
-    //   validator: (value) => {
-    //     return value.length > 6;
-    //   },
-    //   message: "Please enter a long password",
-    // },
+    type: String,
   },
   address: {
     type: String,
