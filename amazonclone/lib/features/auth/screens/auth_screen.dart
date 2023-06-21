@@ -1,5 +1,6 @@
-import 'package:amazonclone/common/custom_button.dart';
-import 'package:amazonclone/common/custom_textfield.dart';
+
+import 'package:amazonclone/common/widgets/custom_button.dart';
+import 'package:amazonclone/common/widgets/custom_textfield.dart';
 import 'package:amazonclone/constants/global_variables.dart';
 import 'package:flutter/material.dart';
 import '../services/auth_service.dart';
