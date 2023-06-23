@@ -1,4 +1,5 @@
 import 'package:amazonclone/constants/global_variables.dart';
+import 'package:amazonclone/features/account/widgets/orders.dart';
 import 'package:amazonclone/features/account/widgets/top_buttons.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,7 @@ class AccountScreen extends StatelessWidget {
               Container(
                 alignment: Alignment.topLeft,
                 child: Image.asset(
-                  'assets/images/amazon_in.png', 
+                  'assets/images/amazon_in.png',
                   width: 120,
                   height: 45,
                   color: Colors.black,
@@ -53,7 +54,8 @@ class AccountScreen extends StatelessWidget {
           BelowAppBar(),
           SizedBox(height: 10),
           TopButtons(),
-          
+          SizedBox(height: 20),
+          Orders()
         ],
       ),
     );
