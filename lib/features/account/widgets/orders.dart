@@ -1,4 +1,5 @@
 import 'package:amazonclone/constants/global_variables.dart';
+import 'package:amazonclone/features/account/widgets/single_product.dart';
 import 'package:flutter/material.dart';
 
 class Orders extends StatefulWidget {
@@ -56,8 +57,12 @@ class _OrdersState extends State<Orders> {
           ),
           child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: 3,
-              itemBuilder: (context, index) {}),
+              itemCount: list.length,
+              itemBuilder: (context, index) {
+                return SingleProduct(
+                  image: list[index],
+                );
+              }),
         )
       ],
     );
