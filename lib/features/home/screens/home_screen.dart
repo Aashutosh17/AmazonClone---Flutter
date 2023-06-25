@@ -1,5 +1,6 @@
 import 'package:amazonclone/constants/global_variables.dart';
 import 'package:amazonclone/features/home/widgets/address_box.dart';
+import 'package:amazonclone/features/home/widgets/top_categories.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -90,8 +91,8 @@ class _HomeScreenState extends State<HomeScreen> {
           children: const [
             AddressBox(),
             SizedBox(height: 10),
-            // TopCategories(),
-            // SizedBox(height: 10),
+            TopCategories(),
+            SizedBox(height: 10),
             // CarouselImage(),
             // DealOfDay(),
           ],
