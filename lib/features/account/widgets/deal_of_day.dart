@@ -54,7 +54,25 @@ class _DealofDayState extends State<DealofDay> {
                 height: 100,
               ),
               Image.network(
-                'https://images.unsplash.com/photo-1632156752398-2b2cb4e6c907?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cG93ZXJiYW5rfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60',
+                'https://images.unsplash.com/photo-1508380702597-707c1b00695c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJpbW1lcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60',
+                fit: BoxFit.fitWidth,
+                width: 100,
+                height: 100,
+              ),
+              Image.network(
+                'https://images.unsplash.com/photo-1508380702597-707c1b00695c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJpbW1lcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60',
+                fit: BoxFit.fitWidth,
+                width: 100,
+                height: 100,
+              ),
+              Image.network(
+                'https://images.unsplash.com/photo-1508380702597-707c1b00695c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJpbW1lcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60',
+                fit: BoxFit.fitWidth,
+                width: 100,
+                height: 100,
+              ),
+              Image.network(
+                'https://images.unsplash.com/photo-1508380702597-707c1b00695c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJpbW1lcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60',
                 fit: BoxFit.fitWidth,
                 width: 100,
                 height: 100,
