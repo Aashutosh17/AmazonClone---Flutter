@@ -1,6 +1,7 @@
 import 'package:amazonclone/constants/global_variables.dart';
-import 'package:amazonclone/features/account/widgets/carousel.dart';
-import 'package:amazonclone/features/account/widgets/deal_of_day.dart';
+import 'package:amazonclone/features/home/widgets/carousel_image.dart';
+
+import 'package:amazonclone/features/home/widgets/deal_of_day.dart';
 import 'package:amazonclone/features/home/widgets/address_box.dart';
 import 'package:amazonclone/features/home/widgets/top_categories.dart';
 import 'package:flutter/material.dart';
