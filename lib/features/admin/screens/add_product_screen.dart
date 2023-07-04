@@ -1,11 +1,12 @@
 import 'dart:io';
+
 import 'package:amazonclone/common/widgets/custom_button.dart';
 import 'package:amazonclone/common/widgets/custom_textfield.dart';
 import 'package:amazonclone/constants/global_variables.dart';
 import 'package:amazonclone/constants/utils.dart';
+import 'package:amazonclone/features/admin/services/admin_services.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dotted_border/dotted_border.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class AddProductScreen extends StatefulWidget {
@@ -21,6 +22,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
   final TextEditingController descriptionController = TextEditingController();
   final TextEditingController priceController = TextEditingController();
   final TextEditingController quantityController = TextEditingController();
+  final AdminServices adminServices = AdminServices();
 
   String category = 'Mobiles';
   List<File> images = [];
@@ -42,6 +44,20 @@ class _AddProductScreenState extends State<AddProductScreen> {
     'Books',
     'Fashion'
   ];
+  void sellProduct() {
+    if (_addProductFormKey.currentState!.validate() && images.isNotEmpty) {
+      adminServices.sellProduct(
+        context: context,
+        name: productNameController.text,
+        description: descriptionController.text,
+        price: double.parse(priceController.text),
+        quantity: double.parse(quantityController.text),
+        category: category,
+        images: images,
+      );
+    }
+  }
+
   void selectImages() async {
     var res = await pickImages();
     setState(() {
@@ -55,21 +71,24 @@ class _AddProductScreenState extends State<AddProductScreen> {
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(50),
         child: AppBar(
-            flexibleSpace: Container(
-              decoration: const BoxDecoration(
-                gradient: GlobalVariables.appBarGradient,
-              ),
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: GlobalVariables.appBarGradient,
             ),
-            title: const Text(
-              'Add products',
-              style:
-                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-            )),
+          ),
+          title: const Text(
+            'Add Product',
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Form(
+          key: _addProductFormKey,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Column(
               children: [
                 const SizedBox(height: 20),
@@ -106,19 +125,19 @@ class _AddProductScreenState extends State<AddProductScreen> {
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                Icon(
+                              children: [
+                                const Icon(
                                   Icons.folder_open,
                                   size: 40,
                                 ),
-                                SizedBox(height: 15),
+                                const SizedBox(height: 15),
                                 Text(
                                   'Select Product Images',
                                   style: TextStyle(
                                     fontSize: 15,
-                                    color: Colors.grey,
+                                    color: Colors.grey.shade400,
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ),
@@ -164,8 +183,11 @@ class _AddProductScreenState extends State<AddProductScreen> {
                     },
                   ),
                 ),
-                const SizedBox(height: 30),
-                CustomButton(text: 'Sell', onTap: () {})
+                const SizedBox(height: 10),
+                CustomButton(
+                  text: 'Sell',
+                  onTap: sellProduct,
+                ),
               ],
             ),
           ),
