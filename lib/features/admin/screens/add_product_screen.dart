@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:amazonclone/common/widgets/custom_button.dart';
 import 'package:amazonclone/common/widgets/custom_textfield.dart';
 import 'package:amazonclone/constants/global_variables.dart';
@@ -44,6 +43,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
     'Books',
     'Fashion'
   ];
+
   void sellProduct() {
     if (_addProductFormKey.currentState!.validate() && images.isNotEmpty) {
       adminServices.sellProduct(
