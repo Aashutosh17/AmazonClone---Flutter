@@ -2,6 +2,7 @@ import 'package:amazonclone/common/widgets/loader.dart';
 import 'package:amazonclone/constants/global_variables.dart';
 import 'package:amazonclone/features/home/widgets/address_box.dart';
 import 'package:amazonclone/features/search/services/search_services.dart';
+import 'package:amazonclone/features/search/widget/searched_product.dart';
 import 'package:amazonclone/models/product.dart';
 import 'package:flutter/material.dart';
 
@@ -92,7 +93,7 @@ class _SearchScreenState extends State<SearchScreen> {
                             width: 1,
                           ),
                         ),
-                        hintText: 'Search Amazon.in',
+                        hintText: 'Search Amazon',
                         hintStyle: const TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 17,
@@ -122,18 +123,8 @@ class _SearchScreenState extends State<SearchScreen> {
                   child: ListView.builder(
                     itemCount: products!.length,
                     itemBuilder: (context, index) {
+                      return SearchedProduct(product: products![index]);
                       // return GestureDetector(
-                      //   onTap: () {
-                      //     Navigator.pushNamed(
-                      //       context,
-                      //       ProductDetailScreen.routeName,
-                      //       arguments: products![index],
-                      //     );
-                      //   },
-                      //   child: SearchedProduct(
-                      //     product: products![index],
-                      //   ),
-                      // );
                     },
                   ),
                 ),
