@@ -31,7 +31,7 @@ class SearchedProduct extends StatelessWidget {
                 product.images[0],
                 fit: BoxFit.contain,
                 height: 135,
-                width: 135,
+                width: 135, 
               ),
               Column(
                 children: [
