@@ -4,12 +4,11 @@ import 'package:amazonclone/constants/global_variables.dart';
 import 'package:amazonclone/features/product_details/services/product_details_services.dart';
 import 'package:amazonclone/features/search/screens/search_screen.dart';
 import 'package:amazonclone/models/product.dart';
+import 'package:amazonclone/providers/user_provider.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:provider/provider.dart';
-
-import '../../../providers/user_provider.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   static const String routeName = '/product-details';
@@ -28,6 +27,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       ProductDetailsServices();
   double avgRating = 0;
   double myRating = 0;
+
   @override
   void initState() {
     super.initState();

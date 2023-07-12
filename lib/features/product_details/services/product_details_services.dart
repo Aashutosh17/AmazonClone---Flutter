@@ -1,9 +1,11 @@
 // ignore_for_file: use_build_context_synchronously
+
 import 'dart:convert';
 import 'package:amazonclone/constants/error_handling.dart';
 import 'package:amazonclone/constants/global_variables.dart';
 import 'package:amazonclone/constants/utils.dart';
 import 'package:amazonclone/models/product.dart';
+import 'package:amazonclone/models/user.dart';
 import 'package:amazonclone/providers/user_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -31,7 +33,11 @@ class ProductDetailsServices {
       httpErrorHandle(
         response: res,
         context: context,
-        onSuccess: () {},
+        onSuccess: () {
+          User user =
+              userProvider.user.copyWith(cart: jsonDecode(res.body)['cart']);
+          userProvider.setUserFromModel(user);
+        },
       );
     } catch (e) {
       showSnackBar(context, e.toString());
