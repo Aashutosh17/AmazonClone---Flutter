@@ -1,4 +1,6 @@
+import 'package:amazonclone/common/widgets/custom_button.dart';
 import 'package:amazonclone/constants/global_variables.dart';
+import 'package:amazonclone/features/cart/widgets/cart_product.dart';
 import 'package:amazonclone/features/cart/widgets/cart_subtotal.dart';
 import 'package:amazonclone/features/home/widgets/address_box.dart';
 import 'package:amazonclone/features/search/screens/search_screen.dart';
@@ -25,7 +27,6 @@ class _CartScreenState extends State<CartScreen> {
   //     arguments: sum.toString(),
   //   );
   // }
-
   @override
   Widget build(BuildContext context) {
     final user = context.watch<UserProvider>().user;
@@ -114,11 +115,11 @@ class _CartScreenState extends State<CartScreen> {
             const CartSubtotal(),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              // child: CustomButton(
-              //   text: 'Proceed to Buy (${user.cart.length} items)',
-              //   onTap: () => navigateToAddress(sum),
-              //   color: Colors.yellow[600],
-              // ),
+              child: CustomButton(
+                text: 'Proceed to Buy (${user.cart.length} items)',
+                onTap: () {},
+                color: Colors.yellow[600],
+              ),
             ),
             const SizedBox(height: 15),
             Container(
@@ -130,9 +131,9 @@ class _CartScreenState extends State<CartScreen> {
               itemCount: user.cart.length,
               shrinkWrap: true,
               itemBuilder: (context, index) {
-                // return CartProduct(
-                //   index: index,
-                // );
+                return CartProduct(
+                  index: index,
+                );
               },
             ),
           ],
