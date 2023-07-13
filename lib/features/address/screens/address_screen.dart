@@ -92,7 +92,7 @@ class _AddressScreenState extends State<AddressScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var address = 'Chabahil, Kathmandu';
+    var address = context.watch<UserProvider>().user.address;
 
     return Scaffold(
       appBar: PreferredSize(
