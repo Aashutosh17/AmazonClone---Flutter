@@ -2,6 +2,7 @@ import 'package:amazonclone/constants/global_variables.dart';
 import 'package:amazonclone/features/account/screens/account_screen.dart';
 import 'package:amazonclone/features/cart/screens/cart_screen.dart';
 import 'package:amazonclone/features/home/screens/home_screen.dart';
+
 import 'package:flutter/material.dart';
 
 class BottomBar extends StatefulWidget {

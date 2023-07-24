@@ -17,7 +17,7 @@ class ProductDetailsServices {
     required Product product,
   }) async {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
-
+print(product.id);
     try {
       http.Response res = await http.post(
         Uri.parse('$uri/api/add-to-cart'),

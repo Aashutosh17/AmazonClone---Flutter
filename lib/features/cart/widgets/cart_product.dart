@@ -1,4 +1,3 @@
-
 import 'package:amazonclone/features/cart/services/cart_services.dart';
 import 'package:amazonclone/features/product_details/services/product_details_services.dart';
 import 'package:amazonclone/models/product.dart';
@@ -23,6 +22,7 @@ class _CartProductState extends State<CartProduct> {
   final CartServices cartServices = CartServices();
 
   void increaseQuantity(Product product) {
+    print(product.id);
     productDetailsServices.addToCart(
       context: context,
       product: product,

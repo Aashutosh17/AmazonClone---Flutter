@@ -1,5 +1,4 @@
 // ignore_for_file: deprecated_member_use
-
 import 'package:amazonclone/common/widgets/custom_textfield.dart';
 import 'package:amazonclone/constants/global_variables.dart';
 import 'package:amazonclone/constants/utils.dart';
@@ -86,7 +85,7 @@ class _AddressScreenState extends State<AddressScreen> {
     } else if (addressFromProvider.isNotEmpty) {
       addressToBeUsed = addressFromProvider;
     } else {
-      showSnackBar(context, 'ERROR!');
+      showSnackBar(context, 'ERROR');
     }
   }
 
